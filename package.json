@@ -1,0 +1,67 @@
+{
+  "name": "use-signer",
+  "version": "0.1.0",
+  "description": "React hook for using web3modal ",
+  "repository": "https://github.com/vocdoni/use-signer",
+  "author": "Vocdoni <root@vocdoni.io>",
+  "license": "GPL-3.0-or-later",
+  "module": "dist/use-signer.esm.js",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "engines": {
+    "node": ">=14"
+  },
+  "scripts": {
+    "start": "tsdx watch",
+    "build": "tsdx build",
+    "test": "tsdx test --passWithNoTests",
+    "lint": "tsdx lint",
+    "prepare": "tsdx build",
+    "size": "size-limit",
+    "analyze": "size-limit --why"
+  },
+  "peerDependencies": {
+    "react": ">=16"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "tsdx lint"
+    }
+  },
+  "prettier": {
+    "printWidth": 80,
+    "semi": true,
+    "trailingComma": "es5"
+  },
+  "size-limit": [
+    {
+      "path": "dist/use-signer.cjs.production.min.js",
+      "limit": "290 KB"
+    },
+    {
+      "path": "dist/use-signer.esm.js",
+      "limit": "240 KB"
+    }
+  ],
+  "devDependencies": {
+    "@size-limit/preset-small-lib": "^7.0.8",
+    "@types/react": "^17.0.39",
+    "@types/react-dom": "^17.0.13",
+    "husky": "^7.0.4",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "size-limit": "^7.0.8",
+    "tsdx": "^0.14.1",
+    "tslib": "^2.3.1",
+    "typescript": "^4.6.2"
+  },
+  "dependencies": {
+    "@ethersproject/providers": "^5.5.3",
+    "@walletconnect/web3-provider": "^1.7.4",
+    "web3modal": "^1.9.5"
+  }
+}
