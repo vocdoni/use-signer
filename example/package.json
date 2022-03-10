@@ -1,24 +1,19 @@
 {
   "name": "example",
   "version": "1.0.0",
-  "main": "index.js",
-  "license": "GPL-3.0-or-later",
   "scripts": {
-    "start": "parcel index.html",
-    "build": "parcel build index.html"
+    "dev": "next dev -p 8080",
+    "build": "next build",
+    "export": "next build && next export -o build"
   },
   "dependencies": {
-    "react-app-polyfill": "^1.0.0"
-  },
-  "alias": {
-    "react": "../node_modules/react",
-    "react-dom": "../node_modules/react-dom/profiling",
-    "scheduler/tracing": "../node_modules/scheduler/tracing-profiling"
+    "next": "^12.1.0",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "use-signer": "^0.1.0"
   },
   "devDependencies": {
-    "@types/react": "^16.9.11",
-    "@types/react-dom": "^16.8.4",
-    "parcel": "1.12.3",
-    "typescript": "^3.4.5"
+    "@types/react": "^17.0.14",
+    "typescript": "^4.3.5"
   }
 }
