@@ -93,6 +93,31 @@ const AppBody = () => {
 };
 ```
 
+## Methods
+
+When calling `useSigner()` you can invoke the following methods:
+- `methods.selectWallet()`
+  - Opens the Web3 pop up. Throws an Error if something fails
+- `methods.disconnect()`
+  - Closes the connection to the currently active connection
+- `methods.refreshChainId()`
+  - Updates the current chainId
+
+## Fields
+
+When calling `useSigner()` you receive the following variables:
+- `provider`
+  - An ethers.js Web3Provider (if available)
+- `signer`
+  - An ethers.js JsonRpcSigner (if available)
+- `status`
+  - Whether web3modal is connected to a wallet or not
+  - Can be `"disconnected", "connecting" or "connected"`
+- `address`
+  - The address of the currently active wallet (if available)
+- `chainId`
+  - The chainId of the currently selected network
+
 ## Available commands
 
 ```sh
