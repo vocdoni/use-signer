@@ -1,6 +1,6 @@
 import "../styles/globals.css";
 import type { AppProps } from "next/app";
-import { UseSignerProvider } from "use-signer";
+import { UseSignerProvider } from "../..";
 import { IProviderOptions } from "web3modal";
 import WalletConnectProvider from "@walletconnect/web3-provider";
 

@@ -131,12 +131,12 @@ yarn test
 
 ## Example
 
-Check out the `example` folder:
+Start the example web server:
 
 ```sh
-cd example
-yarn
-yarn start
+yarn example
 ```
 
-Navigate to `localhost:1234`
+See in the `example` folder: `pages/_app.tsx` and `pages/index.tsx`
+
+Navigate to `localhost:8080`

@@ -1,4 +1,4 @@
-import { useSigner } from "use-signer";
+import { useSigner } from "../..";
 
 const Page = () => {
   const { provider, signer, status, address, chainId, methods } = useSigner();
