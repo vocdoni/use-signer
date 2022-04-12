@@ -11,7 +11,7 @@ import WalletConnectProvider from "@walletconnect/web3-provider";
 
 // Context
 
-type SignerValue = {
+export type SignerValue = {
   /** An ethers.js Web3Provider (if available) */
   provider: Web3Provider | null;
   /** An ethers.js JsonRpcSigner (if available) */
