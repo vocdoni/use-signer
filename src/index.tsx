@@ -24,7 +24,10 @@ export type SignerValue = {
   chainId: number;
   methods: {
     /** Opens the Web3 pop up. Throws an Error if something fails */
-    selectWallet: () => Promise<void>;
+    selectWallet: (
+      cacheProvider?: boolean,
+      networkId?: string
+    ) => Promise<void>;
     /** Updates the current chainId */
     refreshChainId: () => Promise<void>;
     /** Closes the connection to the currently active connection */
@@ -47,10 +50,11 @@ export function UseSignerProvider({
   const [connected, setConnected] = useState(false);
   const [address, setAddress] = useState<string | null>(null);
   const [chainId, setChainId] = useState(defaultChainId);
+  let web3Modal: Web3Modal | undefined;
 
   /** Opens the Web3 pop up. Throws an Error if something fails. */
-  const selectWallet = (networkId?: string, cacheProvider?: boolean) => {
-    const web3Modal = new Web3Modal({
+  const selectWallet = (cacheProvider: boolean = true, networkId?: string) => {
+    web3Modal = new Web3Modal({
       network: networkId,
       cacheProvider,
       providerOptions,
@@ -81,6 +85,8 @@ export function UseSignerProvider({
     setConnected(false);
     setConnecting(false);
     setAddress(null);
+
+    web3Modal?.clearCachedProvider();
 
     const provider = new Web3Provider(instance)
       .provider as WalletConnectProvider;
