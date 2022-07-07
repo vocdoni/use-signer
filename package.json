@@ -1,6 +1,6 @@
 {
   "name": "use-signer",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "React hook for using web3modal ",
   "repository": "https://github.com/vocdoni/use-signer",
   "author": "Vocdoni <root@vocdoni.io>",

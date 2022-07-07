@@ -71,6 +71,13 @@ Use the hook on any child component:
 const AppBody = () => {
   const { provider, signer, status, address, chainId, methods } = useSigner();
 
+  const onClickSelect = () => {
+    const cacheProvider = true;
+    const networkId = "mainnet";
+    methods.selectWallet(cacheProvider, networkId); // cacheProvider and networkId are optional
+  }
+  const onClickDisconnect = () => methods.disconnect();
+
   return (
     <div style={{ fontFamily: "sans-serif" }}>
       <h2>Use Signer example</h2>
@@ -83,9 +90,9 @@ const AppBody = () => {
 
       <div>
         {status === "disconnected"
-          ? <button onClick={methods.selectWallet}>Connect wallet</button>
+          ? <button onClick={onClickSelect}>Connect wallet</button>
           : status === "connected"
-          ? <button onClick={methods.disconnect}>Disconnect</button>
+          ? <button onClick={onClickDisconnect}>Disconnect</button>
           : <span>Connecting...</span>}
       </div>
     </div>
@@ -98,6 +105,7 @@ const AppBody = () => {
 When calling `useSigner()` you can invoke the following methods:
 - `methods.selectWallet()`
   - Opens the Web3 pop up. Throws an Error if something fails
+  - Accepts an optional `cacheProvider` and `networkId` parameters
 - `methods.disconnect()`
   - Closes the connection to the currently active connection
 - `methods.refreshChainId()`
